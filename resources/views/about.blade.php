@@ -1,31 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Benvenuto in Laravel - About</title>
-    <style>
-        body {
-            background: #222;
-            font-family: sans-serif;
-            color: white;
-        }
+{{-- Estende il layout di base --}}
+@extends('layouts.app')
 
-        * {
-            box-sizing: border-box;
-            padding: 0px;
-            margin: 0px;
-        }
-        
-        a {
-            color: aquamarine;
-            text-decoration: none;
+{{-- Definisce il contenuto da scrivere nello slot/placeholder chiamato "titolo" --}}
+@section('titolo', "About us")
+
+{{-- Definisce il contenuto da scrivere nello slot/placeholder chiamato "content" --}}
+@section('content')
+    <style>
+        h1 {
+            color: blue;
         }
     </style>
-</head>
-<body>
-
     <h1>About us</h1>
     <p>Benvenuta, {{$classe}}</p>    
     <p>La materia attuale è: {{$avanzamento}}</p>
@@ -74,5 +59,4 @@
     
     <a href="/">Torna alla Home</a>
 
-</body>
-</html>
+@endsection

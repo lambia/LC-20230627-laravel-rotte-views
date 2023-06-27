@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $messaggio = "Benvenuta Classe #95";
     $numero = 42;
+    $logo = config("store.logo");
+    $links = config("store.someLinks");
 
-    return view('welcome', compact('messaggio', 'numero') );
+    return view('welcome', compact('messaggio', 'numero', 'logo', 'links') );
 });
 
-Route::get('/about', function () {
+Route::get('/chi-siamo', function () {
 
     $data = [
         "classe" => "Classe #95",
@@ -46,8 +48,10 @@ Route::get('/about', function () {
                 "nome" => "Francesco",
                 "cognome" => "Meloni"
             ]
-        ]
+        ],
+        "logo" => config("store.logo"),
+        "links" => config("store.someLinks")
     ];
 
     return view('about', $data);
-});
+})->name("about");

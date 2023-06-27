@@ -1,31 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Benvenuto in Laravel - Home</title>
-    <style>
-        body {
-            background: #222;
-            font-family: sans-serif;
-            color: white;
-        }
+{{-- Estende il layout di base --}}
+@extends('layouts.app')
 
-        * {
-            box-sizing: border-box;
-            padding: 0px;
-            margin: 0px;
-        }
-
-        a {
-            color: aquamarine;
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-
+{{-- Definisce il contenuto da scrivere nello slot/placeholder chiamato "content" --}}
+@section('content')
     <h1>Laravel 9</h1>
     <p>Hello Laravel World</p>
     <p>{{$messaggio}}</p>
@@ -36,7 +13,6 @@
         echo 3 * $numero;
         @endphp
     </p>
-    <a href="/about">Vai ad about</a>
-    
-</body>
-</html>
+    {{-- <a href="/about-us">Vai ad about</a> --}}
+    <a href="{{route('about')}}">Vai ad about</a>
+@endsection
